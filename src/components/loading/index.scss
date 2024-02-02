@@ -1,0 +1,25 @@
+@import '../vars.scss';
+
+.prowler-loading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $primaryColor;
+
+  .prowler-loading-icon {
+    animation: prowler-rotate 1s 0.2s infinite linear;
+  }
+}
+
+@keyframes prowler-rotate {
+  0% {
+    rotate: 0;
+  }
+  60% {
+    rotate: 300deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}

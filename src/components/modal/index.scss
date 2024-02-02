@@ -1,0 +1,90 @@
+@import '../vars.scss';
+
+.prowler-modal-wrapper {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  box-shadow: $boxShadow;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 1rem;
+  overflow: hidden;
+  max-height: 70vh;
+  max-width: 70vw;
+
+  &.position-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.position-left-top {
+    top: 0;
+    left: 0;
+  }
+  &.position-right-top {
+    top: 0;
+    right: 0;
+  }
+  &.position-left-bottom {
+    left: 0;
+    bottom: 0;
+  }
+  &.position-right-bottom {
+    right: 0;
+    bottom: 0;
+  }
+  &.position-left-center {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  &.position-right-center {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  &.position-bottom-center {
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  &.position-top-center {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  .prowler-modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid $borderColor;
+    max-width: calc(100% - 20px);
+
+    .prowler-modal-header-content {
+      display: flex;
+    }
+    .prowler-modal-close {
+      font-size: 20px;
+      transition: rotate 0.2s ease-in;
+      cursor: pointer;
+      &:hover {
+        rotate: 180deg;
+        color: $errorColor;
+      }
+    }
+  }
+  .prowler-modal-body {
+    flex: 1;
+    padding: 1rem;
+    overflow: auto;
+  }
+  .prowler-modal-footer {
+    border-top: 1px solid $borderColor;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 1rem;
+  }
+}

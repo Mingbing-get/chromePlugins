@@ -1,0 +1,66 @@
+@import '../vars.scss';
+
+.prowler-button-wrapper {
+  padding: 0.2rem 1rem;
+  border: 1px solid;
+  border-radius: $borderRadius;
+  width: fit-content;
+  transition: box-shadow linear 0.2s;
+  position: relative;
+
+  .prowler-button-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &.is-block {
+    width: 100%;
+  }
+  &.is-round {
+    border-radius: 100000000px;
+  }
+
+  &.type-default {
+    background-color: #fff;
+    border-color: $borderColor;
+    &.is-disabled,
+    &.is-loading {
+      background-color: $disabledBgColor;
+    }
+    &:focus {
+      box-shadow: 0 0 6px 0 $borderColor;
+    }
+  }
+
+  @each $name, $color in (primary, $primaryColor), (danger, $errorColor), (success, $successColor), (warning, $warningColor) {
+    &.type-#{$name} {
+      color: #fff;
+      background-color: $color;
+      border-color: $color;
+
+      &.is-disabled,
+      &.is-loading {
+        background-color: rgba($color: $color, $alpha: 0.6);
+        border-color: rgba($color: $color, $alpha: 0.6);
+      }
+
+      &.is-ghost {
+        color: $color;
+        background-color: transparent;
+        border-color: $color;
+        &.is-disabled,
+        &.is-loading {
+          color: rgba($color: $color, $alpha: 0.6);
+          border-color: rgba($color: $color, $alpha: 0.6);
+        }
+      }
+
+      &:focus {
+        box-shadow: 0 0 6px 0 $color;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import '../../../components/vars.scss';
+
+.show-img-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 50vh;
+
+  .show-img-list-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: scroll;
+  }
+}
+
+.show-img-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.4rem;
+  justify-content: space-between;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .show-img-item-img {
+    max-width: 40px;
+    max-height: 40px;
+  }
+
+  .show-img-item-actions {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 1rem;
+
+    .show-img-item-download {
+      word-break: keep-all;
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+
+    .show-img-item-delete {
+      margin-left: 0.4rem;
+      cursor: pointer;
+      &:hover {
+        color: $errorColor;
+      }
+    }
+
+    .show-img-item-error {
+      color: $errorColor;
+      display: none;
+      padding-left: 0.4rem;
+      font-size: 20px;
+    }
+  }
+}
